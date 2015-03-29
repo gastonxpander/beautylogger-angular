@@ -1,0 +1,60 @@
+<div ng-controller="ReviewCtrl as vm">
+
+	<div class="row">
+		<div class="welcome-text-user col-md-5">
+			<h2>Viewing: {{vm.product.name}}</h2>
+		</div>
+		<div class="home-button col-md-2">
+			<button type="button" ng-click="vm.goHome()" class="btn btn-primary">BACK TO ALL PRODUCTS</button>
+		</div>
+	</div>
+
+	<div class="welcome-text-user">
+		<p class="form-intro-text" style="font-weight: bold;">Start by writing a review:</p>
+	</div>
+
+		<div class="row" style="background-color: #F5F5F5">
+			<div class="small-form-area">
+			  <form role="form" ng-submit="vm.addReview(vm.productId, vm.description, vm.rating)">
+			  	<div class="col-md-4">
+				    <div class="form-group">
+				      <label for="Review name">Write a review:</label>
+				      <textarea cols="100" rows="5" class="form-control" ng-model="vm.description" placeholder="Write a detailed review e.g. Used after the shower, and 30 minutes later my skin felt dry already."></textarea>
+				    </div>
+			    </div>
+			    <div class="col-md-4">
+				    <div class="form-group">
+				      <label for="Description">Choose a rating:</label>
+				      <select class="form-control" ng-model="vm.rating">
+				      	<option value="1">Neutral</option>
+				      	<option value="2">Positive</option>
+				      	<option value="0">Negative</option>
+				      </select>
+				    </div>
+				    <div class="row">
+				    	<div class="col-md-2">
+				    		<button type="submit" class="btn btn-primary">Save Review</button>
+				    	</div>
+				    </div>
+			    </div>
+			    <input style="display:none" type="text" class="form-control" ng-model="vm.productId" value="{{vm.productId}}">
+			  </form>
+			</div>
+		</div>
+
+
+		<div class="product-list-container">
+			<h3 style="padding-left: 20px; font-weight: bold;">Beauty log for this product:</h3>
+			<div class="row product-review-row" ng-repeat="reviews in vm.reviews">
+				<div class="col-md-8">
+					{{reviews.description}}
+				</div>
+				<div class="col-md-2">
+					Rating: {{reviews.rating}}
+				</div>
+			</div>
+		</div>
+
+
+
+</div>

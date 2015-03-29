@@ -1,8 +1,10 @@
-app.factory('UserFactory', function UserFactory($http, API_URL, AuthTokenFactory) {
+app.factory('UserFactory', function UserFactory($http, API_URL, AuthTokenFactory, $q) {
 	'use strict';
 	return {
 		register: register,
-		login: login
+		login: login,
+		logout: logout,
+		getUser: getUser
 	};
 
 	function register(email, password) {
@@ -25,5 +27,18 @@ app.factory('UserFactory', function UserFactory($http, API_URL, AuthTokenFactory
 				AuthTokenFactory.setToken(response.data.token);
 				return response;
 			});
+	}
+
+	function getUser() {
+		if (AuthTokenFactory.getToken()) {
+			return $http.get(API_URL + '/api/users/:id');
+		} 
+		else {
+			return $q.reject({ data: 'client has no auth token' });
+		}
+	}
+
+	function logout() {
+		AuthTokenFactory.setToken();
 	}
 });

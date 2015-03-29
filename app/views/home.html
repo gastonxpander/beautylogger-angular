@@ -1,1 +1,37 @@
-<h2>Welcome </h2>
+<div ng-controller="HomeCtrl as vm">
+
+	<div class="welcome-text-user">
+		<h2>Hello {{vm.user}}!</h2>
+	</div>
+
+	<div class="welcome-text-user">
+		<p class="form-intro-text" style="font-weight: bold;">Start by adding a product:</p>
+	</div>
+
+	<div class="small-form-area">
+	  <form role="form" ng-submit="vm.addProduct(vm.name, vm.description)">
+	    <div class="form-group">
+	      <label for="Product name">Product name:</label>
+	      <input type="text" class="form-control" ng-model="vm.name" placeholder="Enter product name e.g. Dove Body Wash">
+	    </div>
+	    <div class="form-group">
+	      <label for="Description">Description:</label>
+	      <textarea cols="50" rows="5" class="form-control" ng-model="vm.description" placeholder="Enter a helpful description e.g. Purchased at whole foods because Mary told me to get it.">
+	      </textarea>
+	    </div>
+	    <button type="submit" class="btn btn-primary">Save Product</button>
+	  </form>
+	</div>
+
+	<div class="product-list-container">
+		<h3 style="padding-left: 20px; font-weight: bold;">Click on any of your products below to review them:</h3>
+		<div class="row" ng-repeat="products in vm.products track by $index">
+			<div class="col-md-2 col-md-offset-1">
+				<a href ng-click="vm.loadProduct(products.id)">{{products.name}}</a> 
+			</div>
+			<div class="col-md-9">
+				{{products.description}}
+			</div>
+	    </div>
+    </div>
+</div>

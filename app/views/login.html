@@ -1,21 +1,24 @@
-<div class="title-text-area">
-  <h3>Sign in.</h3>  
+<div class="jumbotron main">
+
+<div class="welcome-text">
+  <h2>Welcome. Please sign in.</h2>  
 </div>
 
-<div class="small-form" ng-controller="LoginCtrl as vm">
-  <form role="form" ng-submit="vm.login(vm.email, vm.password)">
-    <div class="form-group">
-      <label for="Username">Email:</label>
-      <input type="email" class="form-control" ng-model="vm.email">
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" ng-model="vm.password">
-    </div>
-    <button type="submit" class="btn btn-default">Login</button>
-  </form>
-</div>
+  <div class="small-form-jumbotron" ng-controller="LoginCtrl as vm">
+    <form role="form" ng-submit="vm.login(vm.email, vm.password)">
+      <div class="form-group">
+        <label for="Username">Email:</label>
+        <input type="email" class="form-control" ng-model="vm.email" placeholder="Email Address">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" ng-model="vm.password" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
 
-<div class="text-notice">
-  <p>Already have an account? <a href="#/login">Click here to sign in!</a></p>
+  <div class="welcome-text-notice">
+    <p>Don't have an account? <a href="#/register">Click here to register!</a></p>
+  </div>
 </div>

@@ -4,14 +4,16 @@
 var app = angular.module('myApp', [
   'ngRoute'
 ]).
-config(['$routeProvider', function($routeProvider) {
+config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
   $routeProvider.
   	when( '/register', { templateUrl: 'views/register.html' }).
   	when( '/login', { templateUrl: 'views/login.html' }).
   	when( '/home', { templateUrl: 'views/home.html' }).
+  	when( '/reviews', { templateUrl: 'views/reviews.html' }).
   	otherwise(
   		{ redirectTo: '/login' }
   	);
+  	$httpProvider.interceptors.push('AuthInterceptor');
 }]);
 
 app.constant('API_URL', 'http://localhost:3000');

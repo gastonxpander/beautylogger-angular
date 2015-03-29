@@ -15,11 +15,18 @@
   <!-- Begin modification: Bootstrap added by Gaston -->
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
   <!-- End modification: Bootstrap added by Gaston -->
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-  <div class="header">
-    <h2>BeautyLogger</h2>
+  <div class="header row">
+    <div class="col-md-3 col-md-offset-1">
+      <h1>beautylogger</h1>
+    </div>
+    <div class="col-md-2  col-md-offset-4" ng-controller="IndexCtrl as vm">
+      <button class="btn btn-link" ng-click="vm.logout()">logout</button>
+    </div>
   </div>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -39,10 +46,16 @@
   <!-- Controllers -->
   <script src="controllers/register_controller.js"></script>
   <script src="controllers/login_controller.js"></script>
+  <script src="controllers/home_controller.js"></script>
+  <script src="controllers/review_controller.js"></script>
+  <script src="controllers/index_controller.js"></script>
 
   <!-- Services -->
   <script src="services/auth_service.js"></script>
   <script src="services/auth_token_service.js"></script>
+  <script src="services/auth_interceptor.js"></script>
+  <script src="services/product_service.js"></script>
+  <script src="services/review_service.js"></script>
 
 </body>
 </html>
