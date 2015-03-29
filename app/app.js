@@ -16,4 +16,4 @@ config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvide
   	$httpProvider.interceptors.push('AuthInterceptor');
 }]);
 
-app.constant('API_URL', 'https://blooming-dusk-6660.herokuapp.com:3000');
+app.constant('API_URL', 'https://blooming-dusk-6660.herokuapp.com');
