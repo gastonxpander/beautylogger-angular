@@ -17,7 +17,7 @@
     "karma-junit-reporter": "^0.2.2"
   },
   "scripts": {
-    "postinstall": "bower install && npm start",
+    "postinstall": "bower install",
 
     "prestart": "npm install",
     "start": "http-server -a localhost -p 8020 -c-1",
