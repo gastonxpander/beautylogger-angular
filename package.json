@@ -5,7 +5,8 @@
   "description": "A starter project for AngularJS",
   "repository": "https://github.com/gastonxpander/beautylogger-angular.git",
   "engines": {
-    "node": "0.10.32"
+    "node": "0.10.32",
+    "npm": "2.1.4"
   },
   "dependencies": {
     "karma": "~0.10",
@@ -16,10 +17,10 @@
     "karma-junit-reporter": "^0.2.2"
   },
   "scripts": {
-    "postinstall": "bower install",
+    "postinstall": "bower install && npm start",
 
     "prestart": "npm install",
-    "start": "http-server -a localhost -p 8000 -c-1",
+    "start": "http-server -a localhost -p 8020 -c-1",
 
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
