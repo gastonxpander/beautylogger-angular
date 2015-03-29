@@ -5,8 +5,8 @@
   "description": "A starter project for AngularJS",
   "repository": "https://github.com/gastonxpander/beautylogger-angular.git",
   "engines": {
-    "node": "0.10.32",
-    "npm": "2.1.4"
+    "node": "0.10.32"
+  },
   "devDependencies": {
     "karma": "~0.10",
     "protractor": "^1.1.1",
