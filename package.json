@@ -3,8 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
-  "license": "MIT",
+  "repository": "https://github.com/gastonxpander/beautylogger-angular.git",
+  "engines": {
+    "node": "0.10.32",
+    "npm": "2.1.4"
   "devDependencies": {
     "karma": "~0.10",
     "protractor": "^1.1.1",
